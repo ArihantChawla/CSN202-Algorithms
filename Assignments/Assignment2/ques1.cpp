@@ -48,17 +48,23 @@ int main()
         cout << "\n";
     }
 */
-    int max=0,sum=0;
+    int max=0,sum=0,start=0,end=0;
     for(int i=0;i<n;i++)
     {
         sum=sum+a[i];
         if(sum<0)
         {
             sum=0;
+            start=i+1;
         }
         if(sum>max)
+        {
             max=sum;
+            end=i;
+        }
     }
     cout << "\nThe maximum sum of a subarray is " << max << "." << endl;
+    cout << "\nThe start of the maximum sum subarray is from index " << start+1 << "." << endl;
+    cout << "\nThe end of the maximum sum subarray is at index " << end+1 << "." << endl;
     cout << "\n\n----------------------------------------------------\n\nThis is a program to find maximum sum of a subarray\n\n----------------------------------------------------\n\n";
 }
