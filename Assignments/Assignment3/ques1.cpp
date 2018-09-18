@@ -29,7 +29,7 @@ int main()
 	{
 		if(x[i]>n)
 		n=x[i];
-	    else if(y[i]>n)
+	    if(y[i]>n)
 			n=y[i];
 	}
 	int memo[n+1];

@@ -19,15 +19,19 @@ int main()
     {
         cin >> a[i];
     }
-    float start=a[0];
+    float start[n];
+    start[0]=a[0];
     int count=1;
     for(int i=1;i<n;i++)
     {
-        if(a[i]>(start+2))
+        if(a[i]>(start[count-1]+2))
         {
-            start=a[i];
+            start[count]=a[i];
             count++;
         }
     }
-    cout << "\n\n----------------------------------------------------\n\nThe smallest number of intervals of size two that contain all the points are " << count << "\n\n----------------------------------------------------\n\nThis is a program to find the smallest set of intervals\neach of length 2, that contains all the given points\nusing greedy approach.\n\n----------------------------------------------------\n\n";
+    cout << "\n\n----------------------------------------------------\n\nThe smallest number of intervals of size two that contain all the points are " << count << "\n The intervals are:  ";
+    for(int i=0;i<count;i++)
+        cout << " (" << start[i] << "," << start[i]+2 << ") ";
+    cout << "\n\n----------------------------------------------------\n\nThis is a program to find the smallest set of intervals\neach of length 2, that contains all the given points\nusing greedy approach.\n\n----------------------------------------------------\n\n";
 }
